@@ -14,7 +14,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-app.get("/", function(req, res) {
+app.get("https://ilgiz555.github.io/to-do-list/", function(req, res) {
     
     const day = date.getDate();
     
@@ -22,7 +22,7 @@ app.get("/", function(req, res) {
 
 });
 
-app.post("/", function(req, res) {
+app.post("https://ilgiz555.github.io/to-do-list/", function(req, res) {
 
     const item = req.body.newItem;
 
@@ -40,21 +40,21 @@ app.post("/", function(req, res) {
     }
 });
 
-app.get("/work", function(req, res) {
+app.get("https://ilgiz555.github.io/to-do-list/work", function(req, res) {
     res.render("list", {listTitle: "Work List", newListItems: workItems});
 });
 
-app.get("/about", function(req, res) {
+app.get("https://ilgiz555.github.io/to-do-list/about", function(req, res) {
     res.render("about");
 });
 
-app.post("/work", function(req, res) {
+app.post("https://ilgiz555.github.io/to-do-list/work", function(req, res) {
     let item = req.body.newItem;
     workItems.push(item);
     res.redirect("/work");
 });
 
 
-app.listen(3000, function() {
-    console.log("Server started on port 3000");
-});
+// app.listen(3000, function() {
+//     console.log("Server started on port 3000");
+// });
